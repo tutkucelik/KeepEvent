@@ -1,0 +1,10 @@
+﻿@using KeepEvent.BOL.Entities
+@using KeepEvent.WebUI.ViewModels
+@model CategoryCityVM
+
+@{
+    ViewBag.Title = "EventDetails";
+}
+
+<h2>@Model.Events.FirstOrDefault(f=>f.ID==1).Name</h2>
+

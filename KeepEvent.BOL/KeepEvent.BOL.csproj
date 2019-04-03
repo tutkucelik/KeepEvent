@@ -58,6 +58,7 @@
     <Compile Include="Entities\Place.cs" />
     <Compile Include="Entities\PlaceEvent.cs" />
     <Compile Include="Entities\Slider.cs" />
+    <Compile Include="Entities\TContent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

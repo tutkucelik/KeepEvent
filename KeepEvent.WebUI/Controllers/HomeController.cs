@@ -24,7 +24,8 @@ namespace KeepEvent.WebUI.Controllers
         Repository<PlaceEvent> repoPlaceEvent = new Repository<PlaceEvent>();
         Repository<Event> repoEvent = new Repository<Event>();
         Repository<Place> repoPlace = new Repository<Place>();
-        Repository<Contact> repoContact = new Repository<Contact>();
+        Repository<TContent> repoTContent = new Repository<TContent>();
+       
 
         public ActionResult Index()
         {
@@ -38,6 +39,7 @@ namespace KeepEvent.WebUI.Controllers
                 Headers = repoHeader.GetAll().ToList(),
 
                 PlaceEvents = repoPlaceEvent.GetAll().Include(i => i.Event).Include(i => i.Place).Include(i => i.Event.Category).ToList(),
+                TContents = repoTContent.GetAll().ToList(),
             };
             return View(categorycityVM);
             //return View(repoSlider.GetAll().OrderBy(o => o.PIndex));
@@ -82,8 +84,6 @@ namespace KeepEvent.WebUI.Controllers
 
             return View();
         }
-
-        
         public ActionResult Explore()
         {
             return View();
@@ -96,14 +96,13 @@ namespace KeepEvent.WebUI.Controllers
         {
             return View();
         }
-        public ActionResult EventDetails(int EventID)
+        public ActionResult EventDetails(int? EventID)
         {
             CategoryCityVM categorycityVM = new CategoryCityVM
             {
-                PlaceEvents = repoPlaceEvent.GetAll().Include(i => i.Event).Include(i => i.Place).Where(f => f.EventID == EventID).ToList()
+                PlaceEvents = repoPlaceEvent.GetAll().Include(i => i.Event).Where(f => f.EventID == EventID).Include(i => i.Place).Include(i => i.Event.Category).ToList(),
             };
-            return View("EventDetails",categorycityVM);
-
+            return View(categorycityVM);
         }
    
     }

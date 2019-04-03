@@ -14,5 +14,6 @@ namespace KeepEvent.WebUI.ViewModels
         public ICollection<Place> Places { get; set; }
         public ICollection<PlaceEvent> PlaceEvents { get; set; }
         public ICollection<Header> Headers { get; set; }
+        public ICollection<TContent> TContents { get; set; }
     }
 }

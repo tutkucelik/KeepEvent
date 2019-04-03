@@ -20,6 +20,7 @@ namespace KeepEvent.DAL.Contexts
         public DbSet<Admin> Admin { get; set; }
         public DbSet<Header> Header { get; set; }
         public DbSet<Contact> Contact { get; set; }
+        public DbSet<TContent> TContent { get; set; }
        
 
        

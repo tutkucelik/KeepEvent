@@ -74,15 +74,18 @@
     <!-- Hero Social Btn -->
     <div class="hero-social-btn">
         <div class="social-title d-flex align-items-center">
-            <h6>Follow us on Social Media</h6>
+            <h6>Sosyal medyadan takip edin</h6>
             <span></span>
         </div>
         <div class="social-btns">
-            <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-            <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                @foreach(TContent hbtc in Model.TContents.Where(w=>w.Filter=="Sosyal Medya"))
+                {
+                    <a href="@hbtc.Column1"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
+                    <a href="@hbtc.Column2"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                    <a href="@hbtc.Column3"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                    <a href="@hbtc.Column4"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
+                    <a href="@hbtc.Column5"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                }
         </div>
     </div>
 </section>
